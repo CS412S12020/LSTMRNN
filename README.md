@@ -2,19 +2,15 @@
 
 This model uses Long-Short Tem Memory Recurrent Neural Networks to make predictions
 
-# Items Left;
+# Description
 
-1	Generate test set for Fiji to predict feature 'Tourism Numbers'. Although dataset contains multiple features, the  implementation predicts a single feature at a time. For this we will leave tourism numbers blank while the other features remain intact. Initial predictions is pretty bad as the model has learned from other bigger countries such as China with massive tourism numbers. Dataset only contains Fiji for the Oceania region at the moment, will need to add the PNG, NZ and Aus dataset in the COVIDMaster.xslx file. One way to avoid bias would be to shuffle the placement of the other diseases and countries before Fiji.
+Dataset is put together from 5 known diseases. For each disease we have tried to gather at least 2 countries that were affected together with relevant information such as disease numbers, medical infrastructure and most importantly for this study tourist values such as visitor arrivals or income from tourism spending.
 
-2   Might need to add Fiji to training set (with tourism numbers) 
+The model takes in 19 features and predicts a univariate time series. For this example it tries to predict the tourist arrivals. The time series sliding window and step ahead are important.
 
-# What are our objectives:
+Sliding window has been set to 4 with one step ahead prediction. During test, as soon as a prediction is made it is fed back into the train set as input. This is done 'horizon value' number of times - in this case 12.
 
-1   How many months till tourism numbers normalize?
-2	Predict numbers for the next year
-3   Possibly predict GDP?
-
-See pages below for original code
+The model can be improved further.
 
 https://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/
 https://machinelearningmastery.com/multivariate-time-series-forecasting-lstms-keras/
