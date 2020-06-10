@@ -1,0 +1,1 @@
+Training Samples:195Test Samples:41Future Steps Predicted:12Test RMSE: 5.042
